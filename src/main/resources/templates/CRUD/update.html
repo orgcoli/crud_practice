@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/crudlayout}">
+<body>
+<div layout:fragment="content">
+    <div class="row mt-5">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+
+            <div class="card">
+                <div class="card-body">
+                    <h2>게시글 작성</h2>
+                    <form th:action="@{/update}" method="post">
+                        <div>
+                        </div>
+                        <div class="mb-1 mt-3">
+                            <input type="hidden" name="id" th:value="${cruddto.id}">
+                            <label for="title" class="form-label">제목:</label>
+                            <input type="text" class="form-control" id="title" name="title" th:value="${cruddto.title}">
+                        </div>
+                        <div class="mb-1">
+                            <label for="content" class="form-label">내용:</label>
+                            <textarea class="form-control" name="content" id="content" rows="10">[[${cruddto.content}]]</textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">등록</button>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+</div>
+
+</body>
+</html>
