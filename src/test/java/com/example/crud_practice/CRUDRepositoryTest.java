@@ -15,10 +15,10 @@ public class CRUDRepositoryTest {
 
     @Test
     public void insert() throws Exception{
-        CRUDEntitty crudEntitty = CRUDEntitty.builder()
-                .title("test")
-                .content("content")
+        CRUDEntitty crudEntity = CRUDEntitty.builder() //builder 사용
+                .title("test")      //제목에 test
+                .content("content") //내용에 content
                 .build();
-        crudRepository.save(crudEntitty);
+        crudRepository.save(crudEntity);
     }
 }

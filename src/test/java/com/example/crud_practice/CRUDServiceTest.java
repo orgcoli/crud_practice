@@ -14,8 +14,8 @@ public class CRUDServiceTest {
     @Test
     public void insert() throws Exception{
         CRUDDTO cruddto = CRUDDTO.builder()
-                .title("test22")
-                .content("content22")
+                .title("test2")
+                .content("content2")
                 .build();
         crudService.create(cruddto);
     }

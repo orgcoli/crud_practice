@@ -17,12 +17,14 @@ public class CRUDService {
     private final CRUDRepository crudRepository;
     private ModelMapper modelMapper = new ModelMapper();
 
+    //게시글 작성
     public void create(CRUDDTO cruddto)throws Exception{
         CRUDEntitty crudEntitty = modelMapper.map(cruddto, CRUDEntitty.class);
 
         crudRepository.save(crudEntitty);
     }
 
+    //게시글 하나 조회
     public CRUDDTO readOne(Long id)throws Exception{
         Optional<CRUDEntitty> data = crudRepository.findById(id);
 
@@ -30,6 +32,7 @@ public class CRUDService {
         return cruddto;
     }
 
+    //게시글 전체 조회
     public List<CRUDDTO> readAll() throws Exception{
         List<CRUDEntitty> list = crudRepository.findAll();
 
@@ -37,6 +40,7 @@ public class CRUDService {
         return result;
     }
 
+    //게시글 수정
     public void update(CRUDDTO cruddto)throws Exception{
         Long id = cruddto.getId();
         Optional<CRUDEntitty> data = crudRepository.findById(id);
@@ -48,6 +52,7 @@ public class CRUDService {
         crudRepository.save(update);
     }
 
+    //게시글 삭제
     public void delete(Long id)throws Exception{
         crudRepository.deleteById(id);
     }

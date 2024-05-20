@@ -9,7 +9,7 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 public class CRUDDTO {
-    private Long id;
-    private String title;
-    private String content;
+    private Long id;        //게시글 id
+    private String title;   //게시글 제목
+    private String content; //게시글 내용
 }
